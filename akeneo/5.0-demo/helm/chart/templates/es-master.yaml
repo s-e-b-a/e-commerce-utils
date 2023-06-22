@@ -6,6 +6,7 @@ metadata:
   labels:
     {{- include "akeneo.labels" . | nindent 4 }}
 spec:
+  serviceName: {{ include "akeneo.fullname" . }}-es-statefulset
   replicas: {{ .Values.elasticsearch.replicas }}
   selector:
     matchLabels:
